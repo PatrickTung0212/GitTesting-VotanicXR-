@@ -250,6 +250,11 @@
             <br></br> 媒體播放器類別，用於播放音訊、影像及視訊。
             </summary>
         </member>
+        <member name="F:Votanic.vMedia.MediaPlayer.MediaPlayer.fileLocation">
+            <summary>
+            The relative folder location of files. <br></br> 檔案的相對文件夾位置。
+            </summary>
+        </member>
         <member name="F:Votanic.vMedia.MediaPlayer.MediaPlayer.media">
             <summary>
             List of media. <br></br> 媒體列表。
@@ -454,6 +459,14 @@
             <summary>
             Video preview images. <br></br> 視訊預覽影像。
             </summary>
+        </member>
+        <member name="M:Votanic.vMedia.MediaPlayer.MediaPlayer.Open(System.String)">
+            <summary>
+            Clear all loaded media and Load all media in the target path.
+            <br></br> 清除已載入的所有媒體及載入目標路徑中的所有媒體。
+            <para> Open("../Resources/Media") </para>
+            </summary>
+            <param name="path"> Directory or File path <br></br> 目錄或檔案路徑 </param>
         </member>
         <member name="M:Votanic.vMedia.MediaPlayer.MediaPlayer.Play">
             <summary>

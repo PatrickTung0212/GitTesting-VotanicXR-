@@ -1,16 +1,17 @@
-Votanic Library Version (20210324)
+Votanic Library Version (20220506)
 ====================================
 --- VotanicXR SDK ---
-Votanic.License - 2020.6.0
-Votanic.Core - 2020.6.4
-Votanic.Editor - 2020.6.4
-Votanic.vIO - 2020.6.5
-Votanic.vNet - 2020.6.5
-Votanic.vNet.Editor - 2020.6.5
-Votanic.vMedia - 2020.6.1
-Votanic.vXR - 2020.6.5
-Votanic.vXR.Editor - 2020.6.5
+Votanic.License - 2020.7.0
+Votanic.Core - 2020.7.0
+Votanic.Editor - 2020.7.0
+Votanic.vIO - 2020.7.0
+Votanic.vNet - 2020.7.11
+Votanic.vNet.Editor - 2020.7.11
+Votanic.vMedia - 2020.7.0
+Votanic.vXR - 2020.7.11
+Votanic.vXR.Editor - 2020.7.11
 
 
---- External ---
-Votanic.Assets - 2020.6.4
+--- Extensions ---
+Votanic.Extensions.PointCloud - 2020.7.9
+Votanic.Extensions.WebRTC - 2020.7.9

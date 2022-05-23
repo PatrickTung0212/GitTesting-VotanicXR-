@@ -17,6 +17,7 @@ public class vGearTemp : MonoBehaviour
     public vGear_Panel messagePanel;
     public InputField inputText;
     public Text receivedMessage;
+    public vGear_VirtualKeyboard virtualKeyboard;
 
     // Start is called before the first frame update
     void Start()
@@ -40,9 +41,10 @@ public class vGearTemp : MonoBehaviour
         }
 
         //Get Device Input
-        if (vGear.Input.KeyboardUp(KeyCode.Space))
+        if (vGear.Input.KeyboardUp(KeyCode.C))
         {
-
+            inputPanel.Close();
+            virtualKeyboard.Close();
         }
 
         if (networking)
@@ -57,6 +59,7 @@ public class vGearTemp : MonoBehaviour
                 messagePanel.Open(vGear.user.TransformPoint(0, 1.25f, 1), vGear.user.eulerAngles + new Vector3(30, 0, 0));
                 networking.messages.Clear();
                 inputPanel.Close();
+                virtualKeyboard.Close();
             }
         }
 
@@ -66,6 +69,10 @@ public class vGearTemp : MonoBehaviour
     {
         inputPanel.Open(vGear.user.TransformPoint(0, 1.25f, 1), vGear.user.eulerAngles + new Vector3(30, 0, 0));
         messagePanel.Close();
+        inputText.ActivateInputField();
+        inputText.Select();
+        inputText.MoveTextEnd(true);
+        //vGear.controller.SetTool("DrumStick");
     }
 
     public void Send()

@@ -45,6 +45,18 @@
             <param name="decel"> Transition decelerating value <br></br> 過場減速值 </param>
             <param name="parameter"> Translation calculation parameter <br></br> 轉移計算參數 </param>
         </member>
+        <member name="M:Votanic.vXR.vCast.Core.Benchmark.StartPerformanceLogAsync(System.String,System.String,System.Int32,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Start the Performance Log process for both in unity and csharp.
+            Should be called if the exe parameter contains corresponding arguements.
+            </summary>
+            <param name="executablePath"> The path to the external csharp executable program. </param>
+            <param name="logPath"> The folder path to the log file. </param>
+            <param name="updateInteval"> The time (in milisecond) to calculate and save the statistic to the log file. </param>
+            <param name="refreshSpeed"> The time (in milisecond) to count and record the statistic. </param>
+            <param name="isConsoleLog">  </param>
+            <param name="isShowWindow"> </param>
+        </member>
         <member name="T:Votanic.vXR.vCast.Core.LauncherApp">
             <summary> </summary>
         </member>
@@ -349,6 +361,22 @@
             </summary>
             <param name="eulerAngles"> Relative euler angles <br></br> 相對角度 </param>
         </member>
+        <member name="M:Votanic.vXR.vCast.Core.Entity.SetPositionOffset(UnityEngine.Vector3)">
+            <summary>
+            Set the offset of relative position.
+            <br></br> 設定相對位置的偏移位置。
+            <para> SetPositionOffset(Vector3.zero) </para>
+            </summary>
+            <param name="position"> Offset <br></br> 偏移值 </param>
+        </member>
+        <member name="M:Votanic.vXR.vCast.Core.Entity.SetRotationOffset(UnityEngine.Vector3)">
+            <summary>
+            Set the offset of relative euler angles.
+            <br></br> 設定相對角度的偏移角度。
+            <para> SetRotationOffset(Vector3.zero) </para>
+            </summary>
+            <param name="eulerAngles"> Offset <br></br> 偏移值 </param>
+        </member>
         <member name="M:Votanic.vXR.vCast.Core.Entity.SetTransform(UnityEngine.Vector3,UnityEngine.Vector3)">
             <summary>
             Set the relative position and euler angles of entity to its parent.
@@ -523,7 +551,7 @@
             <br></br> 將物件貼上屏幕。
             <para> MountScreen(transform, Vector3.zero, Vector3.zero) </para>
             </summary>
-            <param name="mountOjbect"> Target object <br></br> 目標物件 </param>
+            <param name="mountObject"> Target object <br></br> 目標物件 </param>
             <param name="position"> Relative position of screen <br></br> 在屏幕的相對位置 </param>
             <param name="eulerAngles"> Relative position of euler angles <br></br> 在屏幕的相對角度 </param>
             <param name="parent"> Parent to screen if true <br></br> 當 true 時將屏幕設為母體 </param>
@@ -561,6 +589,11 @@
         <member name="F:Votanic.vXR.vCast.Core.SystemType.HMD">
             <summary>
             Head-mounted display. <br></br> 頭戴式顯示器。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vCast.Core.SystemType.Mobile">
+            <summary>
+            Mobile Platform. <br></br> 移動平台。
             </summary>
         </member>
         <member name="T:Votanic.vXR.vCast.Core.GCCollect">
@@ -652,6 +685,11 @@
             Run in DOME. <br></br> 在 DOME 執行。
             </summary>
         </member>
+        <member name="F:Votanic.vXR.vCast.Core.Platform.customs">
+            <summary>
+            The custom batch files setting for building the project. <br></br> 自定義建置項目的批次檔設定。
+            </summary>
+        </member>
         <member name="T:Votanic.vXR.vCast.Core.XRSupport">
             <summary>
             Option of development with Unity XR.
@@ -722,7 +760,7 @@
         </member>
         <member name="F:Votanic.vXR.vCast.Core.Batch.name">
             <summary>
-            Name identifier of batch file. <br></br> 批次檔名稱辨識。
+            Identifier of batch file. <br></br> 批次檔辨識。
             </summary>
         </member>
         <member name="F:Votanic.vXR.vCast.Core.Batch.configName">
@@ -1855,6 +1893,9 @@
         <member name="F:Votanic.vXR.vCast.Core.ConfigCameraView.FarClippingPlane">
             <summary> </summary>
         </member>
+        <member name="F:Votanic.vXR.vCast.Core.ConfigCameraView.CustomAspect">
+            <summary> </summary>
+        </member>
         <member name="F:Votanic.vXR.vCast.Core.ConfigCameraView.Aspect">
             <summary> </summary>
         </member>
@@ -2831,6 +2872,11 @@
             <br></br> XR 世界的開始點。包含大小及地板參考。
             </summary>
         </member>
+        <member name="F:Votanic.vXR.vCast.vCast_StartPoint.floor">
+            <summary>
+            The floor object follows start point in editor. <br></br> 在編輯器跟隨開始位置的地板物件。
+            </summary>
+        </member>
         <member name="T:Votanic.vXR.vCast.WandRayDisplay">
             <summary>
             Wand ray display setting.
@@ -3158,6 +3204,11 @@
             Directory of project internal system files. <br></br> 項目內置系統文件的路徑。
             </summary>
         </member>
+        <member name="F:Votanic.vXR.vCast.vCast.fileLocation">
+            <summary>
+            The relative folder location of all system files. <br></br> 所有系統檔案的相對文件夾位置。
+            </summary>
+        </member>
         <member name="F:Votanic.vXR.vCast.vCast.configPath">
             <summary>
             The path for reading the system config file. <br></br> 讀取系統配置文件的路徑。
@@ -3191,6 +3242,11 @@
         <member name="F:Votanic.vXR.vCast.vCast.initialFading">
             <summary>
             Initial fade setting. <br></br> 初始化過場設定。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vCast.vCast.mobileGazeInteraction">
+            <summary>
+            Enable Mobile Gaze Interaction on start. <br></br> 在開始時啟用移動裝置凝視互動。
             </summary>
         </member>
         <member name="F:Votanic.vXR.vCast.vCast.launcherCommand">
@@ -3328,6 +3384,11 @@
         <member name="P:Votanic.vXR.vCast.vCast.sensor">
             <summary>
             The first sensor. <br></br> 第一個感應器。
+            </summary>
+        </member>
+        <member name="P:Votanic.vXR.vCast.vCast.uiScreen">
+            <summary>
+            The screen of UI. <br></br> UI 屏幕。
             </summary>
         </member>
         <member name="P:Votanic.vXR.vCast.vCast.separator">
@@ -3520,6 +3581,22 @@
             <para> GetUserLevel() </para>
             </summary>
             <param name="index"> User Index <br></br> 使用者編號 </param>
+        </member>
+        <member name="M:Votanic.vXR.vCast.vCast.EnableMobileGazeInteraction(System.Boolean)">
+            <summary>
+            Enable Mobile Platform gaze interaction mode.
+            <br></br> 啟動移動平台凝視互動模式。
+            <para> EnableMobileGazeInteraction(true) </para>
+            </summary>
+            <param name="enable"> Enable the gaze interaction mode <br></br> 啟動凝視互動模式 </param>
+        </member>
+        <member name="M:Votanic.vXR.vCast.vCast.SetMobileGazeDuration(System.Single)">
+            <summary>
+            Enable Mobile Platform gaze interaction mode.
+            <br></br> 啟動移動平台凝視互動模式。
+            <para> EnableMobileGazeInteraction(true) </para>
+            </summary>
+            <param name="gazeDuration"> Duration for the gaze action <br></br> 凝視的所需時間 </param>
         </member>
         <member name="M:Votanic.vXR.vCast.vCast.GetTransforms(UnityEngine.Transform,System.Boolean)">
             <summary>
@@ -3929,7 +4006,7 @@
             <param name="index"> Index of Info Wall <br></br> 資訊牆編號 </param>
             <returns></returns>
         </member>
-        <member name="M:Votanic.vXR.vCast.vCast.Info.Print(System.Object,System.Boolean,System.Boolean,System.Int32)">
+        <member name="M:Votanic.vXR.vCast.vCast.Info.Print(System.Object,System.Boolean,System.Boolean,System.Boolean,System.Int32)">
             <summary>
             Add a message to custom message at current frame.
             <br></br> 在當前幀增加一句自訂訊息。
@@ -3938,9 +4015,10 @@
             <param name="message"> Custom Message <br></br> 自訂訊息 </param>
             <param name="clear"> Clear previous message <br></br> 清除先前訊息 </param>
             <param name="hideTitle"> Hide [Print] this frame if true once <br></br> 當 true 時當前幀將隱藏 [Print] </param>
+            <param name="debugLog"> Show in Unity Debug Log <br></br> 在 Unity 的 Debug Log 顯示 </param>
             <param name="index"> Index of Info Wall <br></br> 資訊牆編號 </param>
         </member>
-        <member name="M:Votanic.vXR.vCast.vCast.Info.DebugLog(System.Object,System.Boolean,System.Boolean,System.Int32)">
+        <member name="M:Votanic.vXR.vCast.vCast.Info.DebugLog(System.Object,System.Boolean,System.Boolean,System.Boolean,System.Int32)">
             <summary>
             Add a message to custom debug message at current frame.
             <br></br> 在當前幀增加一句自訂偵錯訊息。
@@ -3949,6 +4027,7 @@
             <param name="message"> Custom Message <br></br> 自訂訊息 </param>
             <param name="clear"> Clear previous message <br></br> 清除先前訊息 </param>
             <param name="hideTitle"> Hide [Debug] this frame if true once <br></br> 當 true 時當前幀將隱藏 [Debug] </param>
+            <param name="debugLog"> Show in Unity Debug Log <br></br> 在 Unity 的 Debug Log 顯示 </param>
             <param name="index"> Index of Info Wall <br></br> 資訊牆編號 </param>
         </member>
         <member name="M:Votanic.vXR.vCast.vCast.Info.ClearPrintLog(System.Int32)">
@@ -3966,6 +4045,15 @@
             <para> ClearDebugLog() </para>
             </summary>
             <param name="index"> Index of Info Wall <br></br> 資訊牆編號 </param>
+        </member>
+        <member name="M:Votanic.vXR.vCast.vCast.Info.GetScreen(System.Int32)">
+            <summary>
+            Get the screen of info wall.
+            <br></br> 取得資訊牆的屏幕。
+            <para> GetScreen() </para>
+            </summary>
+            <param name="index"> Index of Info Wall <br></br> 資訊牆編號 </param>
+            <returns></returns>
         </member>
         <member name="T:Votanic.vXR.vCast.vCast.Frame">
             <summary>
@@ -6303,6 +6391,74 @@
             </summary>
             <param name="angle"> Rotation angle <br></br> 旋轉角度 </param>
         </member>
+        <member name="M:Votanic.vXR.vCast.vCast_User.LookAt(UnityEngine.Transform,System.Single,System.Single,System.Single,System.Single,Votanic.vXR.MotionParameter,Votanic.vXR.TransitionMethod,System.Boolean)">
+            <summary>
+            Horziontally rotate user to face target with custom calculation parameter and transition method.
+            <br></br> 以自定義的過場計算參數及過場方法將使用者水平旋轉至面向目標。
+            <para> LookAt(transform, 1, 0, 0, 45, MotionParameter.Time, TransitionMethod.Translation) </para>
+            </summary>
+            <param name="transform"> Target transform <br></br> 目標 Transform </param>
+            <param name="factor"> Transition factor value <br></br> 過場因子 </param>
+            <param name="accel"> Transition accelerating value <br></br> 過場加速值 </param>
+            <param name="decel"> Transition decelerating value <br></br> 過場減速值 </param>
+            <param name="rotationRatio"> Relatively rotation angle with 1 metre movement <br></br> 一米移動距離的相對旋轉角度 </param>
+            <param name="parameter"> Transition calculation parameter <br></br> 過場計算參數 </param>
+            <param name="method"> Transition method <br></br> 過場方法 </param>
+            <param name="unscaledDeltaTime"> Using unscaled delta time if true <br></br> 當 true 時使用未縮放的時間變化 </param>
+        </member>
+        <member name="M:Votanic.vXR.vCast.vCast_User.LookAt(UnityEngine.Transform,Votanic.vXR.MotionParameter,Votanic.vXR.TransitionMethod,System.Boolean)">
+            <summary>
+            Horziontally rotate user to face target with custom calculation parameter and transition method.
+            <br></br> 以自定義的過場計算參數及過場方法將使用者水平旋轉至面向目標。
+            <para> LookAt(transform, MotionParameter.Time, TransitionMethod.Translation) </para>
+            </summary>
+            <param name="transform"> Target transform <br></br> 目標 Transform </param>
+            <param name="method"> Transition method <br></br> 過場方法 </param>
+            <param name="parameter"> Transition calculation parameter <br></br> 過場計算參數 </param>
+            <param name="unscaledDeltaTime"> Using unscaled delta time if true <br></br> 當 true 時使用未縮放的時間變化 </param>
+        </member>
+        <member name="M:Votanic.vXR.vCast.vCast_User.LookAt(UnityEngine.Transform)">
+            <summary>
+            Horziontally rotate user to face target.
+            <br></br> 將使用者水平旋轉至面向目標。
+            <para> LookAt(transform) </para>
+            </summary>
+            <param name="transform"> Target transform <br></br> 目標 Transform </param>
+        </member>
+        <member name="M:Votanic.vXR.vCast.vCast_User.LookAt(UnityEngine.Vector3,System.Single,System.Single,System.Single,System.Single,Votanic.vXR.MotionParameter,Votanic.vXR.TransitionMethod,System.Boolean)">
+            <summary>
+            Horziontally rotate user to face target position by a horizontal angle with custom calculation parameter and transition method.
+            <br></br> 以自定義的過場計算參數及過場方法將使用者水平旋轉至面向目標位置。
+            <para> LookAt(Vector3.zero, 1, 0, 0, 45, MotionParameter.Time, TransitionMethod.Translation) </para>
+            </summary>
+            <param name="position"> Target transform <br></br> 目標位置 </param>
+            <param name="factor"> Transition factor value <br></br> 過場因子 </param>
+            <param name="accel"> Transition accelerating value <br></br> 過場加速值 </param>
+            <param name="decel"> Transition decelerating value <br></br> 過場減速值 </param>
+            <param name="rotationRatio"> Relatively rotation angle with 1 metre movement <br></br> 一米移動距離的相對旋轉角度 </param>
+            <param name="parameter"> Transition calculation parameter <br></br> 過場計算參數 </param>
+            <param name="method"> Transition method <br></br> 過場方法 </param>
+            <param name="unscaledDeltaTime"> Using unscaled delta time if true <br></br> 當 true 時使用未縮放的時間變化 </param>
+        </member>
+        <member name="M:Votanic.vXR.vCast.vCast_User.LookAt(UnityEngine.Vector3,Votanic.vXR.MotionParameter,Votanic.vXR.TransitionMethod,System.Boolean)">
+            <summary>
+            Horziontally rotate user to face target position with custom calculation parameter and transition method.
+            <br></br> 以自定義的過場計算參數及過場方法將使用者水平旋轉至面向目標位置。
+            <para> LookAt(Vector3.zero, MotionParameter.Time, TransitionMethod.Translation) </para>
+            </summary>
+            <param name="position"> Target transform <br></br> 目標位置 </param>
+            <param name="method"> Transition method <br></br> 過場方法 </param>
+            <param name="parameter"> Transition calculation parameter <br></br> 過場計算參數 </param>
+            <param name="unscaledDeltaTime"> Using unscaled delta time if true <br></br> 當 true 時使用未縮放的時間變化 </param>
+        </member>
+        <member name="M:Votanic.vXR.vCast.vCast_User.LookAt(UnityEngine.Vector3)">
+            <summary>
+            Horziontally rotate user to face target position.
+            <br></br> 將使用者水平旋轉至面向目標位置。
+            <para> LookAt(Vector3.zero) </para>
+            </summary>
+            <param name="position"> Target transform <br></br> 目標位置 </param>
+        </member>
         <member name="M:Votanic.vXR.vCast.vCast_User.PauseTransform">
             <summary>
             Pause the current user transformation.
@@ -6796,6 +6952,11 @@
             Able to change grab from pick so that the interactables can be ungrabbed. <br></br> 能夠將拾起狀態改為抓握，使交互物可被放開。
             </summary>
         </member>
+        <member name="F:Votanic.vXR.GrabSetting.parentConstraint">
+            <summary>
+            Grab by Parent Constraint. <br></br> 使用母約束進行抓握。
+            </summary>
+        </member>
         <member name="F:Votanic.vXR.GrabSetting.parentToController">
             <summary>
             Decide parent to controller or not. <br></br> 決定是否依附母物件。
@@ -7127,6 +7288,360 @@
             <summary>
             Duration for Hold and Look related interaction type. <br></br> 互動類型 Hold 及 Look 相關的持續時間。
             </summary>
+        </member>
+        <member name="T:Votanic.vXR.vGear.vGear_DrumStick">
+            <summary>
+            Drum Stick tool of vCast controller.
+            <br></br> vCast 控制器的鼓棍工具。
+            </summary>
+        </member>
+        <member name="T:Votanic.vXR.vGear.vGear_UIDropDownItem">
+            <summary>
+            Unity UI Drop Down item interaction control.
+            <br></br> Unity UI 下拉式菜單物件的互動控制。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_UIDropDownItem.area">
+            <summary>
+            Active interaction area RectTransform. <br></br> 有效互動面積 RectTransform。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_UIDropDownItem.item">
+            <summary>
+            RectTransform component. <br></br> RectTransform 組件。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_UIDropDownItem.boxCollider">
+            <summary>
+            BoxCollider component. <br></br> BoxCollider 組件。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_UIDropDownItem.interactables">
+            <summary>
+            Interactables component. <br></br> 交互物組件。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_UIDropDownItem.size">
+            <summary>
+            Size of item. <br></br> 物品大小。
+            </summary>
+        </member>
+        <member name="T:Votanic.vXR.vGear.vGear_UIDropDownSlider">
+            <summary>
+            Unity UI Drop Down slider interaction control.
+            <br></br> Unity UI 下拉式菜單滑動按鈕的互動控制。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_UIDropDownSlider.bar">
+            <summary>
+            Bar of silder. <br></br> 滑動按鈕的欄。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_UIDropDownSlider._collider">
+            <summary>
+            BoxCollider component. <br></br> BoxCollider 組件。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_UIDropDownSlider.rect">
+            <summary>
+            RectTransform component. <br></br> RectTransform 組件。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_UIDropDownSlider.edge">
+            <summary>
+            Edge of slider. <br></br> 滑動按鈕的邊。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_UIDropDownSlider.top">
+            <summary>
+            Top of slide range. <br></br> 滑動範圍的頂。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_UIDropDownSlider.down">
+            <summary>
+            Bottom of slide range. <br></br> 滑動範圍的底。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_UIDropDownSlider.size">
+            <summary>
+            Size of slider. <br></br> 滑動按鈕大小。
+            </summary>
+        </member>
+        <member name="M:Votanic.vXR.vGear.vGear_UIDropDownSlider.SetController(Votanic.vXR.vGear.vGear_Controller)">
+            <summary>
+            Set the controller of slider.
+            <br></br> 設定滑動按鈕的控制器。
+            </summary>
+            <param name="controller"> Controller <br></br> 控制器 </param>
+        </member>
+        <member name="M:Votanic.vXR.vGear.vGear_UIDropDownSlider.Slide">
+            <summary>
+            Slide.
+            <br></br> 滑動。
+            </summary>
+        </member>
+        <member name="T:Votanic.vXR.vGear.VirtualKeyType">
+            <summary>
+            Type of virtual key.
+            <br></br> 虛擬鍵盤的類型。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.VirtualKeyType.Text">
+            <summary>
+            Text key. <br></br> 文本鍵。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.VirtualKeyType.Backspace">
+            <summary>
+            Backspace key. <br></br> 退格鍵。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.VirtualKeyType.Delete">
+            <summary>
+            Delete key. <br></br> 刪除鍵。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.VirtualKeyType.Shift">
+            <summary>
+            Shift key. <br></br> 替換鍵。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.VirtualKeyType.Left">
+            <summary>
+            Left Arrow key. <br></br> 左箭咀鍵。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.VirtualKeyType.Right">
+            <summary>
+            Right Arrow key. <br></br> 右箭咀鍵。
+            </summary>
+        </member>
+        <member name="T:Votanic.vXR.vGear.vGear_VirtualKey">
+            <summary>
+            3D Virtual Key for typing.
+            <br></br> 輸入用的 3D 虛擬按鍵。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKey.shiftIndex">
+            <summary>
+            Shift value of key. <br></br> 按鍵替換值。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKey.type">
+            <summary>
+            Type of virtual key. <br></br> 虛擬鍵盤的類型。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKey.keys">
+            <summary>
+            Texts of key on different shift value. <br></br> 在不同替換值的按鍵文本。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKey.vibration">
+            <summary>
+            Vibration when hit the key. <br></br> 當擊中按鍵時震動。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKey.swipe">
+            <summary>
+            Support swipe input or not. <br></br> 是否支持滑動輸入。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKey.selectColor">
+            <summary>
+            Model color when selecting. <br></br> 點選時的模型顏色。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKey.pressColor">
+            <summary>
+            Model color when pressing. <br></br> 按下時的模型顏色。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKey.pressScale">
+            <summary>
+            Model scale when pressing. <br></br> 按下時的模型大小。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKey.pressDetection">
+            <summary>
+            Minimum value to determine press action. <br></br> 判斷為按下的最少值。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKey.cooldown">
+            <summary>
+            Cool down for next action. <br></br> 下個動作的冷卻時間。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKey.offset">
+            <summary>
+            Position offset when hitted. <br></br> 被擊中時的位於偏移。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKey.keepActionTimer">
+            <summary>
+            Timer for keeping the key action. <br></br> 持續按鍵動作的計時。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKey.keyText">
+            <summary>
+            UI Text component. <br></br> UI 文本組件。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKey.interactables">
+            <summary>
+            Interactables component. <br></br> 交互物組件。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKey.outliner">
+            <summary>
+            Outliner component. <br></br> 輪廓組件。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKey.controller">
+            <summary>
+            Current hit controller. <br></br> 目前的撞擊控制器。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKey.inputField">
+            <summary>
+            Current input field. <br></br> 目前的輸入欄。
+            </summary>
+        </member>
+        <member name="M:Votanic.vXR.vGear.vGear_VirtualKey.Select">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Votanic.vXR.vGear.vGear_VirtualKey.Deselect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Votanic.vXR.vGear.SwipeMode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.SwipeMode.Match">
+            <summary>
+            The prediction words are matching the swipe path. <br></br> 預測詞與滑動路徑匹配。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.SwipeMode.Distance">
+            <summary>
+            The prediction words are calculated from the swipe path by Damerau–Levenshtein distance. <br></br> 預測詞是通過 Damerau-Levenshtein 距離從滑動路徑計算出來。
+            </summary>
+        </member>
+        <member name="T:Votanic.vXR.vGear.vGear_VirtualKeyboard">
+            <summary>
+            3D Virtual Keyboard for typing.
+            <br></br> 輸入用的 3D 虛擬鍵盤。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKeyboard.vibration">
+            <summary>
+            Vibration when hit the key. <br></br> 當擊中按鍵時震動。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKeyboard.shift">
+            <summary>
+            Shift value of keyboard. <br></br> 鍵盤替換值。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKeyboard.autoOpen">
+            <summary>
+            Auto open if an input field is focused. <br></br> 當有輸入欄被專注時自動打開。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKeyboard.autoClose">
+            <summary>
+            Auto close if no input field is focused. <br></br> 當沒有輸入欄被專注時自動關閉。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKeyboard.offset">
+            <summary>
+            Default relative open position offset. <br></br> 鍵盤預設相對打開位置偏移值。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKeyboard.faceAngle">
+            <summary>
+            Default face angle of keyboard. <br></br> 鍵盤預設面向角度。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKeyboard.swipeMode">
+            <summary>
+            Swipe input mode for trigger interaction. <br></br> 點擊互動的滑動輸入模式。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKeyboard.predictionWords">
+            <summary>
+            List of word prediction. <br></br> 單詞預測列表。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKeyboard.keys">
+            <summary>
+            Keys of keyboard. <br></br> 鍵盤的鍵。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKeyboard.predictionKeys">
+            <summary>
+            Prediction keys. <br></br> 預測鍵。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKeyboard.inputField">
+            <summary>
+            Current input field. <br></br> 目前的輸入欄。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_VirtualKeyboard.isOpened">
+            <summary>
+            Return true if the keyboard is opened. <br></br> 當鍵盤打開時傳回 true。
+            </summary>
+        </member>
+        <member name="M:Votanic.vXR.vGear.vGear_VirtualKeyboard.Open(UnityEngine.Vector3,UnityEngine.Vector3)">
+            <summary>
+            Open keyboard.
+            <br></br> 打開鍵盤。
+            <para> Open(Vector3.zero, Vector3.zero) </para>
+            </summary>
+            <param name="position"> Keyboard position <br></br> 鍵盤位置 </param>
+            <param name="eulerAngles"> Keyboard euler angles <br></br> 鍵盤角度 </param>
+        </member>
+        <member name="M:Votanic.vXR.vGear.vGear_VirtualKeyboard.Open">
+            <summary>
+            Open keyboard.
+            <br></br> 打開鍵盤。
+            <para> Open(Vector3.zero, Vector3.zero) </para>
+            </summary>
+        </member>
+        <member name="M:Votanic.vXR.vGear.vGear_VirtualKeyboard.SetInputField(UnityEngine.UI.InputField)">
+            <summary>
+            Set an input field for this keyboard.
+            <br></br> 為這個鍵盤設定輸入欄。
+            <para> SetInputField(inputField) </para>
+            </summary>
+            <param name="inputField"> Target input field <br></br> 目標輸入欄 </param>
+        </member>
+        <member name="M:Votanic.vXR.vGear.vGear_VirtualKeyboard.Close">
+            <summary>
+            Close keyboard.
+            <br></br> 關閉鍵盤。
+            </summary>
+        </member>
+        <member name="M:Votanic.vXR.vGear.vGear_VirtualKeyboard.SetVibration(System.Boolean)">
+            <summary>
+            Enable or disable vibration.
+            <br></br> 啟用或停用震動。
+            <para> SetVibration(true) </para>
+            </summary>
+            <param name="vibrate"> Vibrate if true <br></br> 當 true 時震動 </param>
+        </member>
+        <member name="M:Votanic.vXR.vGear.vGear_VirtualKeyboard.SetShift(System.Int32)">
+            <summary>
+            Set the shift value of keyboard.
+            <br></br> 設定鍵盤替換值。
+            </summary>
+            <param name="index"> Page <br></br> 頁數 </param>
         </member>
         <member name="T:Votanic.vXR.vGear.Coordinate">
             <summary>
@@ -7977,6 +8492,11 @@
             The inventories of inventory system. <br></br> 庫存系統的所有庫存。
             </summary>
         </member>
+        <member name="F:Votanic.vXR.vGear.vGear_InventoryManager.fileLocation">
+            <summary>
+            The relative folder location of files. <br></br> 檔案的相對文件夾位置。
+            </summary>
+        </member>
         <member name="F:Votanic.vXR.vGear.vGear_InventoryManager.dataPath">
             <summary>
             Json path for saving and loading items. <br></br> 用作儲存及讀取物品的 Json 路徑。
@@ -8494,6 +9014,11 @@
             <summary>
             The Network Manager for XR system.
             <br></br> XR 系統的網絡管理員。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.Networking.vGear_Networking.sourcePath">
+            <summary>
+            The path source. <br></br> 路徑來源。
             </summary>
         </member>
         <member name="F:Votanic.vXR.vGear.Networking.vGear_Networking.dataPath">
@@ -10574,7 +11099,8 @@
             </summary>
         </member>
         <member name="T:Votanic.vXR.vGear.MeasureUnit">
-            <summary>Display unit of measurer.
+            <summary> 
+            Display unit of measurer.
             <br></br> 測量工具的顯示單位。
             </summary>
         </member>
@@ -10603,6 +11129,27 @@
             ft
             </summary>
         </member>
+        <member name="T:Votanic.vXR.vGear.MeasureMode">
+            <summary>
+            Mode of measurement.
+            <br></br> 測量模式。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.MeasureMode.Points">
+            <summary>
+            Measure by marking points. <br></br> 以放置不同的點測量。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.MeasureMode.Laser">
+            <summary>
+            Measure by laser distance from tool to raycast hit point. <br></br> 以雷射距離由工具至雷射擊中位置測量。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.MeasureMode.LaserPoints">
+            <summary>
+            Measure by the laser raycast hit points <br></br> 以雷射擊中的位置測量。
+            </summary>
+        </member>
         <member name="T:Votanic.vXR.vGear.vGear_Measurer">
             <summary>
             Measurer tool of vGear controller.
@@ -10619,9 +11166,19 @@
             The measurer will only keep 1 measure line if true . <br></br> 當 true 時測量工具只會保留 1 條測量線。
             </summary>
         </member>
+        <member name="F:Votanic.vXR.vGear.vGear_Measurer.mode">
+            <summary>
+            Mode of measurement. <br></br> 測量模式。
+            </summary>
+        </member>
         <member name="F:Votanic.vXR.vGear.vGear_Measurer.unit">
             <summary>
             Display unit of measurer. <br></br> 測量工具的顯示單位。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_Measurer.multiplier">
+            <summary>
+            The scene scale multiplier. <br></br> 場景大小倍增器。
             </summary>
         </member>
         <member name="F:Votanic.vXR.vGear.vGear_Measurer.decimals">
@@ -10689,6 +11246,14 @@
             </summary>
             <param name="continuity"> Continue to mark measure point or not <br></br> 是否連續標記測量點 </param>
         </member>
+        <member name="M:Votanic.vXR.vGear.vGear_Measurer.SetMode(Votanic.vXR.vGear.MeasureMode)">
+            <summary>
+            Set the measure mode.
+            <br></br> 設定測量模式。
+            <para> SetMode(MeasureMode.Points) </para>
+            </summary>
+            <param name="mode"> Mode of measurement <br></br> 測量模式</param>
+        </member>
         <member name="M:Votanic.vXR.vGear.vGear_Measurer.Remove(System.Int32)">
             <summary>
             Remove the record.
@@ -10737,6 +11302,11 @@
         <member name="F:Votanic.vXR.vGear.vGear_Brush.destroyLocusScript">
             <summary>
             Destroy locus script after drawing. <br></br> 完成繪畫後移除畫筆腳本。
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.vGear_Brush.handheld">
+            <summary>
+            Draw locus on handheld or projected mode. <br></br> 以手持或投射方式繪畫。
             </summary>
         </member>
         <member name="F:Votanic.vXR.vGear.vGear_Brush.locusType">
@@ -10932,6 +11502,11 @@
         <member name="P:Votanic.vXR.vGear.vGear_Controller.measurer">
             <summary>
             The measurer tool of controller. <br></br> 控制器的測量工具。
+            </summary>
+        </member>
+        <member name="P:Votanic.vXR.vGear.vGear_Controller.drumStick">
+            <summary>
+            The drum stick tool of controller. <br></br> 控制器的鼓棍工具。
             </summary>
         </member>
         <member name="M:Votanic.vXR.vGear.vGear_Controller.SetCheckPoint(UnityEngine.Transform,System.Boolean)">
@@ -12769,6 +13344,99 @@
             <para> Remove("GameObject") </para>
             </summary>
             <param name="name"> Object name <br></br> 物件名稱 </param>
+        </member>
+        <member name="T:Votanic.vXR.vGear.VKSwipe.DistanceSwipeType">
+            <summary>
+            SwipeType using Damerau–Levenshtein distance.
+            </summary>
+        </member>
+        <member name="M:Votanic.vXR.vGear.VKSwipe.DistanceSwipeType.#ctor(System.String[])">
+            <summary>
+            </summary>
+            <param name="wordList">The dictionary of words.</param>
+        </member>
+        <member name="M:Votanic.vXR.vGear.VKSwipe.DistanceSwipeType.GetSuggestionImpl(System.String)">
+            <summary>
+            Returns suggestions for an input string.
+            </summary>
+            <param name="input">Input string</param>
+        </member>
+        <member name="T:Votanic.vXR.vGear.VKSwipe.MatchSwipeType">
+            <summary>
+            MatchSwipeType.
+            </summary>
+        </member>
+        <member name="F:Votanic.vXR.vGear.VKSwipe.MatchSwipeType.KeyboardLayoutEnglish">
+            <summary>
+            Keyboard layout.
+            </summary>
+        </member>
+        <member name="M:Votanic.vXR.vGear.VKSwipe.MatchSwipeType.#ctor(System.String[])">
+            <summary>
+            </summary>
+            <param name="wordList">The dictionary of words.</param>
+        </member>
+        <member name="M:Votanic.vXR.vGear.VKSwipe.MatchSwipeType.GetSuggestionImpl(System.String)">
+            <summary>
+            Returns suggestions for an input string.
+            </summary>
+            <param name="input">Input string</param>
+        </member>
+        <member name="M:Votanic.vXR.vGear.VKSwipe.MatchSwipeType.Match(System.String,System.String)">
+            <summary>
+            Checks if a letter is present in a path or not.
+            </summary>
+        </member>
+        <member name="M:Votanic.vXR.vGear.VKSwipe.MatchSwipeType.GetKeyboardRow(System.Char)">
+            <summary>
+            Returns the row number of the character.
+            </summary>
+        </member>
+        <member name="M:Votanic.vXR.vGear.VKSwipe.MatchSwipeType.Compress(System.Text.StringBuilder)">
+            <summary>
+            Removes redundant sequential characters.
+            </summary>
+        </member>
+        <member name="M:Votanic.vXR.vGear.VKSwipe.MatchSwipeType.GetMinimumWordlength(System.String)">
+            <summary>
+            Returns the minimum possible word length from the path.
+            Uses the number of transitions from different rows in
+            the keyboard layout to determin the minimum length.
+            </summary>
+        </member>
+        <member name="T:Votanic.vXR.vGear.VKSwipe.SwipeType">
+            <summary>
+            Abstract SwipeType.
+            </summary>
+        </member>
+        <member name="M:Votanic.vXR.vGear.VKSwipe.SwipeType.#ctor(System.String[])">
+            <summary>
+            </summary>
+            <param name="wordList">The dictionary of words.</param>
+        </member>
+        <member name="P:Votanic.vXR.vGear.VKSwipe.SwipeType.Words">
+            <summary>
+            Dictionary of words.
+            </summary>
+        </member>
+        <member name="M:Votanic.vXR.vGear.VKSwipe.SwipeType.GetSuggestion(System.String)">
+            <summary>
+            Returns suggestions for an input string.
+            </summary>
+            <param name="input">Input string</param>
+        </member>
+        <member name="M:Votanic.vXR.vGear.VKSwipe.SwipeType.GetSuggestion(System.String,System.Int32)">
+            <summary>
+            Returns suggestions for an input string.
+            </summary>
+            <param name="input">Input string</param>
+            <param name="count">The number of elements to return.</param>
+        </member>
+        <member name="M:Votanic.vXR.vGear.VKSwipe.SwipeType.GetSuggestionImpl(System.String)">
+            <summary>
+            Returns suggestions for an input string.
+            </summary>
+            <param name="input">Input string</param>
         </member>
         <member name="T:Votanic.vXR.MotionParameter">
             <summary>

@@ -707,6 +707,42 @@
             <param name="caseSensitive"> Check with case sensitive <br></br> 檢查大小寫 </param>
             <returns></returns>
         </member>
+        <member name="T:Votanic.FileLocation">
+            <summary>
+            The relative folder location of files.
+             <br></br> 檔案的相對文件夾位置。
+            </summary>
+        </member>
+        <member name="F:Votanic.FileLocation.AbsolutePath">
+            <summary>
+            Absolute path. <br></br> 絕對路徑。
+            </summary>
+        </member>
+        <member name="F:Votanic.FileLocation.VotanicFolder">
+            <summary>
+            The Assets/Votanic folder in the project. <br></br> 項目的 Assets/Votanic 文件夾。
+            </summary>
+        </member>
+        <member name="F:Votanic.FileLocation.ExternalResourcesFolder">
+            <summary>
+            "../Resources" folder. <br></br> "../Resources" 文件夾。
+            </summary>
+        </member>
+        <member name="F:Votanic.FileLocation.DataPath">
+            <summary>
+            Unity Application.dataPath folder. In editor as the Assets folder. <br></br> Unity Application.dataPath 路徑。在編輯器即 Assets 文件夾。
+            </summary>
+        </member>
+        <member name="F:Votanic.FileLocation.StreamingAssetsPath">
+            <summary>
+            Unity Application.streamingAssetsPath folder. <br></br> Unity Application.streamingAssetsPath 路徑。
+            </summary>
+        </member>
+        <member name="F:Votanic.FileLocation.PersistentDataPath">
+            <summary>
+            Unity Application.persistentDataPath folder. <br></br> Unity Application.persistentDataPath 路徑。
+            </summary>
+        </member>
         <member name="T:Votanic.ReadWrite">
             <summary>
             Read write static methods.
@@ -798,20 +834,30 @@
             <param name="path"> Target location <br></br> 目標位置 </param>
             <returns></returns>
         </member>
-        <member name="M:Votanic.ReadWrite.FullName(System.String)">
+        <member name="M:Votanic.ReadWrite.RealPath(System.String,Votanic.FileLocation)">
             <summary>
             Return the full name of a path.
             <br></br> 傳回路經的全名。
-            <para> FullName("C:/abc/efg/text.txt") </para>
+            <para> RealPath("C:/abc/efg/text.txt") </para>
+            </summary>
+            <param name="path"> Target location <br></br> 目標位置 </param>
+            <param name="sourcePath"> Source path <br></br> 路徑來源 </param>
+            <returns></returns>
+        </member>
+        <member name="M:Votanic.ReadWrite.FullPath(System.String)">
+            <summary>
+            Return the full name of a path.
+            <br></br> 傳回路經的全名。
+            <para> FullPath("C:/abc/efg/text.txt") </para>
             </summary>
             <param name="path"> Target location <br></br> 目標位置 </param>
             <returns></returns>
         </member>
-        <member name="M:Votanic.ReadWrite.FullNameToArray(System.String)">
+        <member name="M:Votanic.ReadWrite.FullPathToArray(System.String)">
             <summary>
             Return the directory, file name and extension of a path.
             <br></br> 傳回路經的目錄、檔案名稱及副檔名。
-            <para> FullNameToArray("C:/abc/efg/text.txt") </para>
+            <para> FullPathToArray("C:/abc/efg/text.txt") </para>
             </summary>
             <param name="path"> Target location <br></br> 目標位置 </param>
             <returns></returns>

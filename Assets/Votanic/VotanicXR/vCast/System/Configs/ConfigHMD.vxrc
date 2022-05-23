@@ -8,7 +8,7 @@
     "Info": [
       {
         "Enable": false,
-        "Screen": "RightScreen",
+        "Screen": "InfoScreen",
         "Alignment": "Right-Top",
         "WaterMark": {
           "Enable": true,
@@ -197,14 +197,24 @@
     ],
     "Screen": [
       {
-        "Name": "RightScreen",
+        "Name": "UIScreen",
         "Parent": "Screens",
-        "Width": 4,
+        "Position": [ 0.0, 1.5, 1.5 ],
+        "Rotation": [ 0.0, 0.0, 0.0 ],
+        "Width": 3,
         "Height": 3,
         "EnableWarning": false,
-        "WarningDistance": 0.6,
-        "Position": [ 2, 1.5, 0 ],
-        "Rotation": [ 0, 90, 0 ]
+        "WarningDistance": 0.6
+      },
+      {
+        "Name": "InfoScreen",
+        "Parent": "Screens",
+        "Position": [ 1.5, 1.5, 0 ],
+        "Rotation": [ 0, 90, 0 ],
+        "Width": 3,
+        "Height": 3,
+        "EnableWarning": false,
+        "WarningDistance": 0.6
       }
     ],
     "Camera": [
@@ -266,6 +276,7 @@
           "FieldOfView": 60,
           "NearClippingPlane": 0.01,
           "FarClippingPlane": 1000.0,
+          "CustomAspect": false,
           "Aspect": 1.333333,
           "DisplayLayers": [],
           "IgnoreLayers": [],

@@ -428,6 +428,66 @@
             <param name="keyName"> Key name <br></br> 按鍵名稱 </param>
             <returns></returns>
         </member>
+        <member name="T:Votanic.vIO.Mobile.MobileInput">
+            <summary>
+            The mobile input device class.
+            <br></br> 移動輸入裝置類別。
+            </summary>
+        </member>
+        <member name="F:Votanic.vIO.Mobile.MobileInput.buttons">
+            <summary>
+            Buttons of mobile input. <br></br> 移動輸入裝置的按鈕群。
+            </summary>
+        </member>
+        <member name="F:Votanic.vIO.Mobile.MobileInput.axes">
+            <summary>
+            Axes of mobile input. <br></br> 移動輸入裝置的軸群。
+            </summary>
+        </member>
+        <member name="M:Votanic.vIO.Mobile.MobileInput.#ctor(System.Int32,System.Single,System.Single,System.Single)">
+            <summary>
+            Declare a mobile input.
+            <br></br> 宣句一個移動輸入。
+            </summary>
+        </member>
+        <member name="M:Votanic.vIO.Mobile.MobileInput.Update">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Votanic.vIO.Mobile.MobileAxes">
+            <summary>
+            The axes class of VRPN.
+            <br></br> VRPN 軸群類別。
+            </summary>
+        </member>
+        <member name="M:Votanic.vIO.Mobile.MobileAxes.AxisValue(System.Int32,System.Boolean,Votanic.vIO.AssistButtons)">
+            <summary>
+            Return the value of an axis.
+            <br></br> 傳回一個軸的值。
+            <para> AxisValue(0) </para>
+            </summary>
+            <param name="index"> Axis index <br></br> 軸編號 </param>
+            <param name="reversed"> Reverse axis value if true <br></br> 當 true 時反轉軸值 </param>
+            <param name="assistButtons"> Assist buttons <br></br> 輔助按鈕 </param>
+            <returns></returns>
+        </member>
+        <member name="T:Votanic.vIO.Mobile.MobileButtons">
+            <summary>
+            The mobile input device buttons class.
+            <br></br> 移動輸入裝置按鈕群類別。
+            </summary>
+        </member>
+        <member name="M:Votanic.vIO.Mobile.MobileButtons.ButtonPress(System.Int32,System.Boolean)">
+            <summary>
+            Return true if the button is pressing.
+            <br></br> 當按鈕按住時傳回 true。
+            <para> ButtonPress(0) </para>
+            </summary>
+            <param name="index"> Button index <br></br> 按鈕編號 </param>
+            <param name="reversed"> Reverse the result if true <br></br> 當 true 時反轉結果 </param>
+            <returns></returns>
+        </member>
         <member name="T:Votanic.vIO.OpenVR.OpenVRAxes">
             <summary>
             The axes class of OpenVR.

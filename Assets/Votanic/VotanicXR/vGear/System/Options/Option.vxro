@@ -499,7 +499,7 @@
     },
     "Landing": {
         "Apply": false,
-        "Screen": "FrontScreen",
+        "Screen": "UIScreen",
         "FitScreen": true,
         "OnScreenOffset": [
             0.0,

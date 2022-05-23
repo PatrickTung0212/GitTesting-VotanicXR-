@@ -1,3 +1,215 @@
+============================================= 2020.7.11 (20220506) ============================================
+[vNet - 2020.7.11]	
+1.	Fixed the errors caused by the wrong identity of networking user
+	修正由錯誤的網絡使用者身份引致的錯誤
+
+============================================= 2020.7.10 (20220425) ============================================
+[vCast - 2020.7.10]	
+1.	Added property and API for getting UI Screen and Info Wall Screen
+	新增取得使用者介面屏幕和資料牆屏幕的相關屬性和 API
+
+============================================= 2020.7.9 (20211222) =============================================
+[vGear - 2020.7.9]	
+1.	Added Unity UI drop down menu helper components
+	新增 Unity UI 下拉色選單輔助組件
+
+[Extensions - 2020.7.9]	
+1.	Moved Point Cloud extension from Assets to Extensions
+	移動點雲擴充功能
+2.	Added WebRTC extension
+	新增 WebRTC 擴充功能
+
+============================================= 2020.7.8 (20211201) =============================================
+[vCast - 2020.7.8]	
+1.	Added Benchmark feature
+	新增基準測試功能
+
+============================================= 2020.7.7 (20211124) =============================================
+[vNet - 2020.7.7]	
+1.	Fixed networking fatal error for more than 2 players
+	修正多於 2 個玩家時的網路嚴重錯誤
+2.	Fixed the network object disappear problem when client disconnected
+	修正網絡物件在客戶端斷線時會消失的問題
+3.	Added more API for Network Object Authority
+	新增更多關於網絡物件控制權的 API
+4.	Added option for display received messages on debug log
+	新增在偵錯日誌顯示已接收的訊息的選項
+
+[vCast - 2020.7.7]	
+1.	Added Parent Constraint option for grabbling interactables
+	新增抓握交互物的母約束選項
+2.	Fixed outliner component initialization bug
+	修正輪廓組件初始化錯誤的問題
+
+[vGear - 2020.7.7]	
+1.	Fixed network slider sync value problem
+	修正網絡滑動按鈕同步數值錯誤的問題
+
+============================================= 2020.7.6 (20211111) =============================================
+[vNet - 2020.7.6]	
+1.	Fixed networking disconnect error
+	修正網路切斷錯誤問題
+2.	Provide options for displaying user name & ID when sending internal message
+	提供傳送內部訊息時顯示使用者名稱及編號的選項
+3.	Fixed networking messages space character problem
+	修正網絡訊息的空白字元問題
+
+[vCast - 2020.7.6]	
+1.	Allow main display resolution larger than monitior resolution
+	容許主顯示的解像度大於顯示屏的解像度
+2.	Fixed low resolution config not work problem
+	修正無法使用低畫質配置的問題
+3.	Fixed the display position problem on Unity 2018.2 and 2020
+	修正顯示位置無法在 Unity 2018.2 及 2020 正常顯示的問題
+4.	Fixed Tracking and Stereo attributes cannot setup on start problem
+	修正顯示位置無法在 Unity 2018.2 及 2020 正常顯示的問題
+5.	Added API for user to face a target
+	新增使用者面向目標的 API
+
+============================================= 2020.7.5 (20210826) =============================================
+[vGear - 2020.7.5]	
+1.	Fixed virtual keyboard sometimes auto open problem
+	修正虛擬鍵盤有時自動打開的問題
+2.	Magnifier and Report camera will sync Clear Flags and Background Color on start
+	放大鏡及報告工具的相機將會在開始時同步清除標誌和背景顏色
+
+[Assets - 2020.7.5]	
+1.	Point Cloud support e57 format
+	點雲將支援 e57 格式
+2.	Optimized Point Cloud rendering on Unity 2019
+	優化點雲在 Unity 2019 的渲染
+
+============================================= 2020.7.4 (20210804) =============================================
+[vGear - 2020.7.4]	
+1.	Added Select effect for Virtual Key
+	新增虛擬鍵的點選效果
+
+[Assets - 2020.7.4]	
+1.	Display more information of point cloud files to output log (Length, Area, Volume)
+	輸出日誌將顯示更多點雲檔案資訊（長度、面積、體積）
+
+============================================= 2020.7.3 (20210727) =============================================
+[vGear - 2020.7.3]	
+1.	Fixed Measurer laser display problem
+	修正測量工具的射線顯示問題
+2.	Optimized Virtual Keyboard Prediction algorithm
+	優化虛擬鍵盤預測字算法
+3.	Improved Virtual Leyboard auto on/off function
+	改良虛擬鍵盤自動打開或關閉的功能
+4.	Added Swipe Input for Virtual keyboard
+	新增虛擬鍵盤的滑動輸入功能
+
+============================================= 2020.7.2 (20210712) =============================================
+[vNet - 2020.7.2]	
+1.	Provided more API for network connection
+	提供更多網絡連接 API
+
+[vCast - 2020.7.2]	
+1.	Improved the build behaviour for Unity 2019.4
+	改良在 Unity 2019.4 的建置行為
+2.	Optimized controller initialization
+	優化控制器初始化
+3.	Optimized wand length calculation
+	優化操縱桿長度計算
+4.	Command All Received will return original strings
+	Command All Received 將會傳回原字串值
+
+[vGear - 2020.7.2]	
+1.	Added Drum Stick tool
+	新增鼓棍工具
+2.	Added Virtual Keyboard & Virtual Key
+	新增虛擬鍵盤及虛擬鍵
+3.	Provided 2 modes for Brush Tool (Handheld & Projected)
+	為畫筆工具提供 2 種模式（手持、投射）
+4.	Provided 3 modes for Measuerer Tool (Points, Laser & Laser Points)
+	為測量工具提供 3 種模式（點、雷射、雷射點）
+
+[Assets - 2020.7.2]	
+1.	Improved Point Cloud finding start point algorithm
+	改善點雲搜尋起點的算法
+
+============================================= 2020.7.1 (20210609) =============================================
+[vCast - 2020.7.1]	
+1.	Fixed the XR build force binding OpenVR device problem
+	修正 XR 版本會強制綁定 OpenVR 裝置的問題
+2.	Provided custom aspect ratio option of camera in system config
+	系統配置將提供自定義相機縱橫比選項
+
+============================================= 2020.7.0 (20210531) =============================================
+[vCore - 2020.7.0]	
+1.	Added relative File Location and reltaed API
+	新增相對檔案位置及相關 API
+
+[vIO - 2020.7.0]	
+1.	Provided Mobile Input
+	提供移動裝置輸入
+2.	Support Oculus Quset
+	支援 Oculus Quset
+4.	Support unknown OpenVR device
+	支援未知 OpenVR 裝置
+3.	Added "Left Ctrl" shortcut key for Virtual Tracker lock and unlock
+	新增「Left Ctrl」快捷徑用於鎖定及解鎖虛擬定位器
+
+[vMedia - 2020.7.0]	
+1.	Support open files in runtime
+	支援實時打開文件
+	
+[vNet - 2020.7.0]	
+1.	Improved Network Object sync issue
+	改良網絡物件同步問題
+
+[vCast - 2020.7.0]	
+1.	Support Moblie Platform (Android)
+	支援移動平台 (Android)
+ -	Streaming Assets for mobile platform - "Setting.vxrs", "Option.vxro" in "StreamingAssets/Votanic/VotanicXR/"
+	移動平台的 Streaming Assets - "Setting.vxrs", "Option.vxro" 放在 "StreamingAssets/Votanic/VotanicXR/"
+ -	and "LandingMenu" in "StreamingAssets/Votanic/VotanicXR/Landing" and "/Landing/Background"
+	及 "LandingMenu" 放在 "StreamingAssets/Votanic/VotanicXR/Landing" 和 "/Landing/Background"
+ -	Please put other json files & media files on Android Platform "files/Votanic"
+	請將其他 json 及媒體檔案放在 Android 平台 "files/Votanic"
+ -	Provided Mobile Gaze prefab for selecting input mode
+	提供移動凝視預載體用於選擇輸入模式
+2.	Stop support Windows 32 bit Platform
+	停止支援 Windows 32 bit 平台
+3.	Fixed the Wand OnTop RenderQuene bug
+	修正操縱桿置頂的 RenderQuene 錯誤問題
+4.	Fixed CommandReceived Condition sometimes not work on command system
+	修正指令系統 CommandReceived 條件有時候無效的問題
+5.	Optimized Info Wall text display logic
+	優化資訊牆文字顯示邏輯
+6.	Unity Debug Log is optional on Info Wall Method now
+	在資訊牆方面呼叫的 Unity Debug Log 現已改為可選的
+7.	Allow user to adjust the offset of Entity
+	容許使用者調整實體的偏移值
+8.	The default floor will follow start point in editor
+	現在預設地板將會在編輯器跟隨開始位置
+9.	Added custom batch setting
+	新增自定義批次設定
+10.	Update Start Point transform from Setting on start
+	開始時根據設定更新起點位置
+11.	Fixed On Start Fader delay problem
+	修正開始時過場器有延遲的問題
+12.	Head, Hand, Hand2 will auto find trackers if no binding on HMD environment
+	在 HMD 環境下，當沒有定位器綁定時，Head, Hand, Hand2 將會自房搜尋定位器
+
+[vGear - 2020.7.0]	
+1.	Fixed the Network Object sync problem when grabbling
+	修正抓握網絡物品時的同步問題
+
+[Assets - 2020.7.0]	
+1.	Optimized the PCROOT format display point method
+	優化 PCROOT 格式顯示點的方法
+2.	Support convert raw file by different preset
+	支持以不同的預設檔轉換原始檔案
+3.	Fixed the file saving problem on some settings
+	修正部份檔案儲存的問題
+4.	Provided external file for storing Point Cloud Setting (.pcs)
+	提供額外檔案儲存點雲設定
+5.	Provided more setting for point cloud waypoint
+	提供更多點雲傳送點設定
+6.	Added more API for loading files
+	新增更多讀取檔案的 API
+
 ============================================= 2020.6.5 (20210324) =============================================
 [vIO - 2020.6.5]	
 1.	Fixed the Mouse Input index problem

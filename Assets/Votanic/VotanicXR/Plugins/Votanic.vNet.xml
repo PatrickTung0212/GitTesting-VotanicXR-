@@ -1325,6 +1325,11 @@
             <br></br> 管理數據庫的類別。
             </summary>
         </member>
+        <member name="F:Votanic.vNet.Database.DatabaseManager.fileLocation">
+            <summary>
+            The relative folder location of files. <br></br> 檔案的相對文件夾位置。
+            </summary>
+        </member>
         <member name="F:Votanic.vNet.Database.DatabaseManager.infoPath">
             <summary>
             Path of json file which store the database information. <br></br> 儲存數據庫資訊的 Json 文件路經。
@@ -2377,6 +2382,21 @@
             Buffer for connection. <br></br> 連線緩衝。
             </summary>
         </member>
+        <member name="F:Votanic.vNet.Networking.NetworkManager.defaultSendName">
+            <summary>
+            By default include user name in sent message. <br></br> 預設傳送訊息包含使用者名稱。
+            </summary>
+        </member>
+        <member name="F:Votanic.vNet.Networking.NetworkManager.defaultSendID">
+            <summary>
+            By default include user ID in sent message. <br></br> 預設傳送訊息包含使用者編號。
+            </summary>
+        </member>
+        <member name="F:Votanic.vNet.Networking.NetworkManager.messageLog">
+            <summary>
+            Display received messages on debug log. <br></br> 在偵錯日誌顯示已接收的訊息。
+            </summary>
+        </member>
         <member name="F:Votanic.vNet.Networking.NetworkManager.hostMsg">
             <summary>
             Start hosting message. <br></br> 開始主持訊息。
@@ -2479,6 +2499,14 @@
             Start hosting.
             <br></br> 開始主持。
             </summary>
+        </member>
+        <member name="M:Votanic.vNet.Networking.NetworkManager.Host(System.Int32)">
+            <summary>
+            Start hosting.
+            <br></br> 開始主持。
+            <para> Host(7777) </para>
+            </summary>
+            <param name="port"> Port <br></br> 連接埠 </param>
         </member>
         <member name="M:Votanic.vNet.Networking.NetworkManager.Stop">
             <summary>
@@ -2589,6 +2617,14 @@
             </summary>
             <param name="identity"> Network identity component <br></br> 網絡識別器 </param>
             <param name="forceSyncTransform"> Force instantly sync network object transform <br></br> 強制馬上同步網絡物件的 Transform </param>
+        </member>
+        <member name="M:Votanic.vNet.Networking.NetworkManager.ReturnAuthority(UnityEngine.Networking.NetworkIdentity)">
+            <summary>
+            Return the authority of a network object to host.
+            交還一個網絡物件的控制權給主持。
+            <para> ReturnAuthority(gameObject.GetComponent("NetworkIdentity")) </para>
+            </summary>
+            <param name="identity"> Network identity component <br></br> 網絡識別器 </param>
         </member>
         <member name="M:Votanic.vNet.Networking.NetworkManager.ChangeScene(System.String)">
             <summary>
@@ -2791,6 +2827,11 @@
         <member name="P:Votanic.vNet.Networking.NetworkObject.waitingAuthority">
             <summary>
             Waiting the authority and pause synchronization. <br></br> 等待權限及暫停同步。
+            </summary>
+        </member>
+        <member name="F:Votanic.vNet.Networking.NetworkObject.isKinematic">
+            <summary>
+            Sync field for new joined network user to get rigidbody kinematic state. <br></br> 給新加入網絡用戶同步的欄，以獲取剛體運動狀態。
             </summary>
         </member>
         <member name="M:Votanic.vNet.Networking.NetworkObject.Start">
